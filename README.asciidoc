@@ -1,0 +1,12 @@
+= devon4quarkus
+
+When implementing apps in Java we support two majore frameworks as flavours in devonfw:
+
+* spring(-boot) with https://github.com/devonfw/devon4j/wiki[devon4j]
+* https://quarkus.io/[quarkus] with `devon4quarkus` from this repository
+
+== Status
+
+Please note that this repository is currently just evolving and work in progress.
+You will also find parts in https://github.com/devonfw-forge/devonfw-microservices/[devonfw-microservices] that will move here over time.
+Feel free to get in touch, contriubte and help us to make our quarkus support as great and production-ready as our spring-boot support.
