@@ -5,6 +5,10 @@ When implementing apps in Java we support two majore frameworks as flavours in d
 * spring(-boot) with https://github.com/devonfw/devon4j/wiki[devon4j]
 * https://quarkus.io/[quarkus] with `devon4quarkus` from this repository
 
+image:https://img.shields.io/github/license/devonfw/devon4quarkus.svg?label=License["Apache License, Version 2.0",link=https://github.com/devonfw/devon4quarkus/blob/develop/LICENSE.txt]
+image:https://img.shields.io/maven-central/v/com.devonfw.java.quarkus/devon4q.svg?label=Maven%20Central["Maven Central",link=https://search.maven.org/search?q=g:com.devonfw.java.quarkus]
+image:https://github.com/devonfw/devon4quarkus/actions/workflows/build.yml/badge.svg["Build Status",link="https://github.com/devonfw/devon4quarkus/actions/workflows/build.yml"]
+
 == Status
 
 Please note that this repository is currently just evolving and work in progress.
