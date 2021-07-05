@@ -19,6 +19,7 @@
     <github.repository>devon4quarkus</github.repository>
     <revision>dev-SNAPSHOT</revision>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.organization>devonfw</sonar.organization>
   </properties>
   
   <modules>
