@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.devonfw</groupId>
+    <artifactId>maven-parent</artifactId>
+    <version>8</version>
+  </parent>
+  <groupId>com.devonfw.java.quarkus</groupId>
+  <artifactId>devon4q</artifactId>
+  <packaging>pom</packaging>
+  <version>dev-SNAPSHOT</version>
+  <name>${project.artifactId}</name>
+  <description>Quarkus stack of devonfw.com (devon4quarkus): develop Java cloud-native apps standardized, faster and with less risk.</description>
+
+  <properties>
+    <github.repository>devon4quarkus</github.repository>
+    <devon_ide_version>${revision}</devon_ide_version>
+  </properties>
+  
+  <modules>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <configuration>
+          <updatePomFile>true</updatePomFile>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
