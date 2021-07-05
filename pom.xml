@@ -17,7 +17,8 @@
 
   <properties>
     <github.repository>devon4quarkus</github.repository>
-    <devon_ide_version>${revision}</devon_ide_version>
+    <revision>dev-SNAPSHOT</revision>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
   
   <modules>
