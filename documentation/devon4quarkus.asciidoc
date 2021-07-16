@@ -1,0 +1,16 @@
+= quarkus 
+:description: comprehensive documentation for quarkus stack of devonfw.
+:doctype: book
+:toc:
+:toc-title: Table of Contents
+:idprefix:
+:idseparator: -
+:sectnums:
+:reproducible:
+:source-highlighter: rouge
+:listing-caption: Listing
+:chapter-label:
+:partnums:
+:imagesdir: ./
+The devonfw community
+${project.version}, ${buildtime}
