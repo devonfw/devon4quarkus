@@ -1,0 +1,98 @@
+:toc: macro
+toc::[]
+
+= Logging
+
+Quarkus supports the following Logging APIs:
+
+* https://docs.jboss.org/hibernate/orm/current/topical/html_single/logging/Logging.html[JBoss Logging]
+* http://www.slf4j.org/[SLF4J]
+* https://commons.apache.org/proper/commons-logging/[Apache Commons Logging]
+* https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html[JDK JUL (java.util.logging)]
+* https://logging.apache.org/log4j/2.x/[Log4j]
+
+Internally, Quarkus uses JBoss Logging. If you use any of the other APIs, Quarkus will send those to JBoss Log Manager.
+If you use libraries with other logging libraries as dependencies, you must exclude them from the dependencies and use a logging adapter provided by JBoss Logging. For more information, see https://quarkus.io/guides/logging#logging-adapters[here].
+
+== Usage
+You can use JBoss Logging out of the box in your code. It is not necessary to add a dependency to your project. We recommend using SLF4J as the API for logging.
+
+=== Logger access
+The general pattern for accessing an instance for a logger class is to use static instances.
+```
+...
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class MyClass {
+    private static final Logger log = LoggerFactory.getLogger(MyClass.class);
+
+}
+```
+If you are use https://projectlombok.org/api/lombok/extern/slf4j/Slf4j.html[Lombok] in your project, you can simply add the `@SLF4J` annotation. Lombok will then automatically create a logger instance that you can use in your code.
+
+=== Configuration
+The log levels are configured in the `application.properties` file. For example, to set the default log level, set the property `quarkus.log.level`.
+To define more specific log levels, you can set different levels per category. 
+
+```
+quarkus.log.level=INFO
+quarkus.log.category."org.hibernate".level=DEBUG
+```
+This would set the default log level in your application to `INFO` and the Hibernate log level to `DEBUG`.
+
+To configure the output format of the log messages, set the property `quarkus.log.console.format`. Information on the supported options can be found https://quarkus.io/guides/logging#logging-format[here].
+```
+quarkus.log.console.format=[D: %d] [P: %p] [C: %X] [T: %t] [L: %c] [M: %m]%n
+```
+Result: 
+```
+[D: 2021-07-20 11:54:33,127] [P: DEBUG] [C: «MDC values»] [T: executor-thread-0] [L: my.package.MyClass] [M: log message...]
+```
+
+=== Log Levels
+You can get an overview of the log levels https://quarkus.io/guides/logging#logging-levels[here].
+
+To understand when to use which log level, you can take a look at the https://github.com/devonfw/devon4j/blob/master/documentation/guide-logging.asciidoc#how-to-log[devon4j logging guide].
+
+=== Mapped Diagnostic Context
+You can use http://www.slf4j.org/manual.html#mdc[MDC] to add custom fields to your log messages.
+```
+MDC.put("yourKey", "yourValue");
+```
+Result:
+```
+[D: 2021-07-20 11:54:33,127] [P: DEBUG] [C: {yourKey=yourValue}] [T: executor-thread-0] [L: my.package.MyClass] [M: log message...]
+```
+
+== JSON Logging
+For production environments we suggest to use JSON logs instead of plain text. The JSON output can be captured by external services for storing and analysis. To do this add the `quarkus-logging-json` extension to your project`s `pom.xml` file.
+```
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-logging-json</artifactId>
+</dependency>
+```
+This will change the output format by default. Since it makes sense in development environments to have the output format in a human readable format, you can disable JSON logging for development (or test) environments by adding the following properties to your `application.properties` file.
+```
+%dev.quarkus.log.console.json=false
+%test.quarkus.log.console.json=false
+```
+
+== Centralized Log Management
+As mentioned in the section on JSON logging, in production environments it makes sense to have a service to store and analyse the logs. For this, you can use a central log management system like https://www.graylog.org/[Graylog] or https://www.elastic.co/logstash/[Logstash] in combination with https://www.elastic.co/elasticsearch/[Elasticsearch], which provides you with a powerful search engine.
+
+For this, Quarkus provides the `quarkus-logging-gelf` extension to send the logs in the https://www.graylog.org/features/gelf[Graylog Extended Log Format (GELF)] to your log management system.
+```
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-logging-gelf</artifactId>
+</dependency>
+```
+
+You do not have to extend your code, just configure the GELF log handler to your management system.
+```
+quarkus.log.handler.gelf.enabled=true
+quarkus.log.handler.gelf.host=tcp:localhost
+quarkus.log.handler.gelf.port=12201
+```
