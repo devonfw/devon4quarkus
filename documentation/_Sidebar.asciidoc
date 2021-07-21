@@ -1,4 +1,4 @@
-* link:Home.asciidoc[Home]
+=== link:Home.asciidoc[Home]
 
 === Guides
 * link:guide-logging.asciidoc[Logging]
