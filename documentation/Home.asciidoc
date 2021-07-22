@@ -1,0 +1,6 @@
+= devonfw for Quarkus (devon4quarkus)
+
+Welcome to the Quarkus stack of devonfw. devon4quarkus is documented by a platform guide (see the side-bar of this wiki) to be used in your projects.
+
+== For contributors
+Contributions and improvements to devonfw are more than welcome. Please read our https://github.com/devonfw/.github/blob/master/CONTRIBUTING.asciidoc#contributing[contributing guide] to get started.
