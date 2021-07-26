@@ -9,7 +9,7 @@
     <version>8</version>
   </parent>
   <groupId>com.devonfw.java.quarkus</groupId>
-  <artifactId>devon4q</artifactId>
+  <artifactId>devon4quarkus</artifactId>
   <packaging>pom</packaging>
   <version>dev-SNAPSHOT</version>
   <name>${project.artifactId}</name>
@@ -21,8 +21,10 @@
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>devonfw</sonar.organization>
   </properties>
-  
+
   <modules>
+    <module>modules</module>
+    <module>templates</module>
   </modules>
 
   <build>
