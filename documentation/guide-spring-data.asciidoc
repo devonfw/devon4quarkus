@@ -42,12 +42,13 @@ Quarkus supports the use of the Criteria API in both native and JVM mode to defi
 QueryDSL, contrary to what is claimed in the https://quarkus.io/guides/spring-data-jpa[Quarkus Spring Data guide], works in both native and JVM mode to define dynamic queries.
 
 === **Pagination**
-Quarkus Spring Data offers paging support. It seems to be fully functional only in JVM mode.
+Quarkus Spring Data offers paging support both in JVM mode and native mode.
+
+In native mode, `PageImpl<T>` has to be used as the return type so that all page information is returned properly.
 
 == Limitation
 
 * Native and named queries are not supported using `@Query` annotation. You will receive something like `Build step io.quarkus.spring.data.deployment.SpringDataJPAProcessor#build threw an exception: java.lang.IllegalArgumentException: Attribute nativeQuery of @Query is currently not supported.`
-* Paging support does not work in native mode.
 * QueryDSL integration works only via custom fragments implementation. As we considered this approach rather poor, we created our own solution in devon4j. Making it work in native mode would mean a huge effort. For now we will leave it like that. Work in the future will be documented correspondingly.
 
 
