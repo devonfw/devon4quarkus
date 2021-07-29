@@ -32,14 +32,14 @@ In addition, repositories can be enriched with additional functionality or overr
 
 === **Query**
 
-Quarkus supports the definition of static PSQL queries with the `@Query` annotation. Examples:
+Quarkus supports the definition of static PSQL queries with the `@Query` annotation. https://github.com/devonfw-sample/devon4quarkus-reference/blob/62e7cb6c7af9668f864c6386fdc79464715ce8fb/src/main/java/com/devonfw/demoquarkus/domain/repo/AnimalRepository.java#L12[Examples]:
 ```
 @Query("select a from Animal a where name = :name")
-	Animal findByName(@Param("name") String name);
+Animal findByName(@Param("name") String name);
 ```
 Quarkus supports the use of the Criteria API in both native and JVM mode to define dynamic queries.
 
-QuerySQL, contrary to what is claimed in the https://quarkus.io/guides/spring-data-jpa[Quarkus Spring Data guide], works in both native and JVM mode to define dynamic queries.
+QueryDSL, contrary to what is claimed in the https://quarkus.io/guides/spring-data-jpa[Quarkus Spring Data guide], works in both native and JVM mode to define dynamic queries.
 
 === **Pagination**
 Quarkus Spring Data offers paging support. It seems to be fully functional only in JVM mode.
