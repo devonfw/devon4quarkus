@@ -50,7 +50,7 @@ With that said, please take this as a recommendation and not a compulsion. Depen
 
 |REST services
 |RESTEasy, RESTEasy Jackson (Jackson serialization support for RESTEasy)
-|RESTEasy JSON-B (Jackson serialization support for RESTEasy), RESTEasy JAXB (XML serialization support for RESTEasy), RESTEasy Multipart (Multipart support for RESTEasy)
+|RESTEasy JSON-B (JSON-B serialization support for RESTEasy), RESTEasy JAXB (XML serialization support for RESTEasy), RESTEasy Multipart (Multipart support for RESTEasy)
 |RESTEasy is an portable implementation of the new JCP specification JAX-RS JSR-311. It can be documented via Swagger OpenAPI.
 
 |async messaging
@@ -109,12 +109,12 @@ With that said, please take this as a recommendation and not a compulsion. Depen
 
 === Basic templates
 [start=1]
-. simple REST API (https://code.quarkus.io/?g=org.devonfw&e=resteasy&e=resteasy-jackson&e=hibernate-validator&e=hibernate-orm[go to code.quarkus.io])
+. simple REST API (https://code.quarkus.io/?g=com.devonfw&e=resteasy&e=resteasy-jackson&e=hibernate-validator&e=hibernate-orm[go to code.quarkus.io])
     * RESTEasy JAX-RS
     * RESTEasy Jackson
     * Hibernate Validator
     * Hibernate ORM
-. simple REST API with monitoring (https://code.quarkus.io/?g=org.devonfw&e=resteasy&e=resteasy-jackson&e=hibernate-validator&e=hibernate-orm&e=micrometer[go to code.quarkus.io])
+. simple REST API with monitoring (https://code.quarkus.io/?g=com.devonfw&e=resteasy&e=resteasy-jackson&e=hibernate-validator&e=hibernate-orm&e=micrometer[go to code.quarkus.io])
     * RESTEasy JAX-RS
     * RESTEasy Jackson
     * Hibernate Validator
