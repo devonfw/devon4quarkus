@@ -1,8 +1,0 @@
-=== link:Home.asciidoc[Home]
-
-=== Guides
-* link:guide-logging.asciidoc[Logging]
-* link:guide-cors-support.asciidoc[CORS support]
-
-=== Coding
-* link:guide-coding-conventions.asciidoc[Coding Conventions]
