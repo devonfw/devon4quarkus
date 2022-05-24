@@ -12,5 +12,5 @@ image:https://github.com/devonfw/devon4quarkus/actions/workflows/build.yml/badge
 == Status
 
 Please note that this repository is currently just evolving and work in progress.
-You will also find parts in https://github.com/devonfw-forge/devonfw-microservices/[devonfw-microservices] that will move here over time.
+You will also find parts in https://github.com/devonfw-sample/devon4quarkus-reference/[devon4quarkus-reference] that will move here over time.
 Feel free to get in touch, contriubte and help us to make our quarkus support as great and production-ready as our spring-boot support.
